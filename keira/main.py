@@ -82,7 +82,7 @@ async def on_member_join(member, ):
     av.putalpha(mask)    ## this makes the rest of the image transparent and thus we now have a circled av
 
     bg = bg.copy()    ## Just copies our background from the start
-    bg.paste(av, (732, 57), av)    ## Pastes our avatar onto the background, i just did it dead in centre
+    bg.paste(av, (732, 57), av)    ## Pastes our avatar onto the background
 
     draw = ImageDraw.Draw(bg)
     font = ImageFont.truetype("Niceyear-7BjZV.otf", 150)
@@ -146,7 +146,7 @@ async def on_message(message):
         await message.channel.send("fuck of i am sleeping")
 
 
-
+#chat bot useing bruh api 
 
 @client.command(aliases = ['chatbot'])
 async def cb(ctx, *, phrase):
