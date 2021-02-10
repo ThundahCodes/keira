@@ -161,8 +161,6 @@ async def cb(ctx, *, phrase):
 
 initial_extensions=[
             'cogs.fun',
-            'cogs.moderation',
-            'cogs.music'
 ]
 
 if __name__ == '__main__':
