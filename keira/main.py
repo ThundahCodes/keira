@@ -18,6 +18,7 @@ import sys
 from PIL import ImageDraw
 from PIL import ImageFont
 import io
+from alexa_reply import reply
 
 intents = discord.Intents.default()
 intents.members = True
@@ -139,21 +140,17 @@ async def test(ctx, member: discord.Member = None):
 
 
 
-@client.event
-async def on_message(message):
-    mention = f'<@!576184038855933953>'
-    if mention in message.content:
-        await message.channel.send("fuck of i am sleeping")
 
 
 
 
-@client.command(aliases = ['chatbot'])
-async def cb(ctx, *, phrase):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(f"https://bruhapi.xyz/cb/{phrase}") as response:
-            resp = await response.json()
-            await ctx.send(resp["res"])
+@client.command(aliases = ['r'])
+async def command(ctx, *, message):
+    owner = "Crepco#3057"
+    bot =  "Keira"
+    message = message
+    resp = reply(message, bot, owner)
+    await ctx.send(resp)
     
     
 
