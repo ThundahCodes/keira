@@ -150,7 +150,7 @@ async def command(ctx, *, message):
     bot =  "Keira"
     message = message
     resp = reply(message, bot, owner)
-    await ctx.send(resp)
+    await ctx.send(await resp)
     
     
 
