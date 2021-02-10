@@ -142,16 +142,14 @@ async def test(ctx, member: discord.Member = None):
 
 
 
-#chat bot useing bruh api 
+#chat bot useing pgamerx's api 
 
 @client.command(aliases = ['r'])
-async def command(ctx, *, message):
-    owner = "Crepco#3057"
-    bot =  "Keira"
-    message = message
-    resp = reply(message, bot, owner)
-    await ctx.send(await resp)
-    
+async def reply(ctx, *, phrase):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(f"https://api.pgamerx.com/ai/response?message={phrase}&language=en") as response:
+            resp = await response.json()
+            await ctx.send(resp[0])
     
 
 
