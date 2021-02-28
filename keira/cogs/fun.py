@@ -60,8 +60,48 @@ class fun(commands.Cog):
      
     @commands.command()
     async def kiss(self, ctx, user: discord.Member):
-        gifs = ["https://media1.tenor.com/images/558f63303a303abfdddaa71dc7b3d6ae/tenor.gif?itemid=12879850",
-                "https://i.gifer.com/PCUi.gif", "https://cdn.weeb.sh/images/B13D2aOwW.gif","https://cdn.weeb.sh/images/B1yv36_PZ.gif", "https://cdn.weeb.sh/images/Sk5P2adDb.gif", "https://media.discordyui.net/reactions/kiss/234082934.gif"]
+        gifs = ["https://giphy.com/embed/FqBTvSNjNzeZG"
+"https://media.giphy.com/media/vaSA1fpCkY06I/giphy.gif "
+"https://i.pinimg.com/originals/9c/be/bf/9cbebfb852e76c2b8d9c3b72ae08e68f.gif"
+"https://www.icegif.com/wp-content/uploads/anime-kiss-icegif-2.gif"
+"https://gfycat.com/boringsadibis"
+"https://gfycat.com/hopefulfabulouskouprey"
+"https://gfycat.com/uglydefenselessdiamondbackrattlesnake"
+"https://i.imgur.com/WVSwvm6.gif"
+"https://i.imgur.com/sZhtvBR.gif"
+"https://i.imgur.com/q340AoA.gif"
+"https://i.imgur.com/SeCRpPp.gif"
+"https://i.imgur.com/LRPJt19.gif"
+"https://i.imgur.com/6nCt4eb.gif"
+"https://i.imgur.com/9758cJX.gif"
+"https://i.imgur.com/Iu2j5Fh.gif"
+"https://i.imgur.com/b3KBV8i.gif"
+"https://i.imgur.com/AOpGwmX.gif"
+"https://i.imgur.com/KAmjoLO.gif"
+"https://i.imgur.com/2pZMgU7.gif"
+"https://i.imgur.com/THyefKo.gif"
+"https://i.imgur.com/QETjUCT.gif"
+"https://i.imgur.com/fXh0i2H.gif"
+"https://tenor.com/bbzm9.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483589430-f951b924a6fd5f59434ad3c63fc6960c.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1450921081-24d8c4265c9f860d73293bce20ebd08f.jpeg"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483588772-bde49b07ca18ca564d91efa7ac9703d7.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483589533-910174dfbbd5636c8fb4be5b117ecfd0.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483589602-6b6484adddd5d3e70b9eaaaccdf6867e.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483589646-9c8cd327454990f5da24af7d3f057627.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483589715-78566ff0e75a4c8f004df98d994561e4.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483589844-8d0395a7386d12026399620c087f4b97.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483589911-a8ffb9869c28bec5498777144571ade2.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483590013-b9d0df015159909c2fc2afe38651250f.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483590076-279c6e2645e2df2bbba1f76b80a70f06.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483590131-f84dd6ab7ec5369c6ec6a2c0eb70cb64.gif"
+"https://cdn.myanimelist.net/s/common/uploaded_files/1483590257-0861880ab63699fae58af9c57e58d3b4.gif"
+"https://tenor.com/view/anime-kiss-crying-cute-couple-gif-13970544"
+"https://tenor.com/OJXy.gif"
+"https://tenor.com/view/cute-kawai-kiss-anime-gif-16371489"
+"https://tenor.com/2cNG.gif"
+"https://tenor.com/Y683.gif"
+"https://media.giphy.com/media/wOtkVwroA6yzK/giphy.gif"]
         embed = discord.Embed(title="Kiss", description=f"Woah {ctx.author.mention} stop kissing {user.mention} so passionately ...",
                               color=random.randint(0x000000, 0xFFFFFF))
         embed.set_image(url=f"{random.choice(gifs)}")
@@ -92,17 +132,6 @@ class fun(commands.Cog):
 
 
 
-    @commands.command()
-    async def angry(self, ctx, user: discord.Member):
-        gifs = ["https://img.17qq.com/images/hmmmndphlpv.jpeg"]
-        embed = discord.Embed(title="ANGRY", description=f"{ctx.author.mention} is angry cause of you {user.mention}", color=random.randint(0x000000, 0xFFFFFF))
-        embed.set_image(url=f"{random.choice(gifs)}")
-        if user == ctx.author:
-            embed = discord.Embed(title="LONELY?",
-                                  description=f"{ctx.author.mention} OH your angry but why :pleading_face:",
-                                  color=random.randint(0x000000, 0xFFFFFF))
-            embed.set_image(url=f"{random.choice(gifs)}")
-        await ctx.send(embed=embed)   
 
 
 

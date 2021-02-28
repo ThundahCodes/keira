@@ -18,7 +18,7 @@ import sys
 from PIL import ImageDraw
 from PIL import ImageFont
 import io
-from alexa_reply import reply
+
 
 intents = discord.Intents.default()
 intents.members = True
@@ -101,41 +101,7 @@ async def on_member_join(member, ):
 
 
 
-@client.command() ## change to bot pleaseeee
-@commands.cooldown(1, 10, commands.BucketType.user)
-async def ping(ctx):
-    return await ctx.send(' {:.2f}ms'.format(client.latency * 1000))
 
-
-@client.command()
-async def test(ctx, member: discord.Member = None):
-    member = member or ctx.author
-    av = Image.open(io.BytesIO(await member.avatar_url_as(static_format='png', size=128).read())).convert('RGB')
-    bg = Image.open('zZLkuPBh.jpg')
-    av = av.resize((630, 630)) ## Resize the av to our wanted size
-    large = (av.size[0] * 3, av.size[1] * 3) ## large is our image sized up by 3x
-    mask = Image.new('L', large, 0)    ## Our mask were gonna use to get a transparent bg with our circle
-    main = ImageDraw.Draw(mask)    ## Allows us to make the circle
-    main.ellipse((0, 0) + large, fill=255)
-    mask = mask.resize(av.size, Image.ANTIALIAS)    ## Changes our masks size to the same as the avatar
-    av.putalpha(mask)    ## this makes the rest of the image transparent and thus we now have a circled av
-
-    bg = bg.copy()    ## Just copies our background from the start
-    bg.paste(av, (732, 57), av)    ## Pastes our avatar onto the background, i just did it dead in centre
-
-    draw = ImageDraw.Draw(bg)
-    font = ImageFont.truetype("Niceyear-7BjZV.otf", 150)
-    big = ImageFont.truetype("Niceyear-7BjZV.otf", 200)     ## different sizes initiate 2 classes
-    draw.text((710, 705), "Welcome", font=big, fill=(255,255,255,128))
-    ## top messages
-    try:
-        draw.text((820, 855), member.name, font=font, fill=(255,255,255,255))
-    except UnicodeEncodeError:
-        draw.text((820, 855), "New User", font=font, fill=(255,255,255,255))
-    ## unicode handling ^^^^
-    
-    bg.save('welcome.png')    ## And we save it
-    await ctx.send(file=discord.File("welcome.png"), content=f"{member.mention}")
 
 
 
