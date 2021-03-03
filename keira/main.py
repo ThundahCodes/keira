@@ -25,7 +25,7 @@ intents.members = True
 
 
 
-client = commands.Bot(command_prefix = ">", intents=intents, help_command=None)
+client = commands.Bot(command_prefix = "_", intents=intents, help_command=None)
 
 
 @client.event
